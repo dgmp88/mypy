@@ -12,8 +12,8 @@ class Timer():
     def reset(self):
         self.t = time.time()
 
-    def print(self):
-        print('%1.2f' % self.get_current_ms())
+    def __str__(self):
+        return '%1.2f' % self.get_current()
 
     def get_reset(self):
         t = self.get_current() 
@@ -24,3 +24,7 @@ class Timer():
         return (time.time()-self.t)*1000
 
 
+if __name__ == '__main__':
+    t = Timer()
+    time.sleep(1)
+    print(t)
